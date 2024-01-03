@@ -1,5 +1,6 @@
 import Navbar from "./Components/Navbar/Navbar";
 import { ReactNode } from "react";
+import "./App.scss";
 
 const App = ({ children }: { children: ReactNode }) => {
   return (
