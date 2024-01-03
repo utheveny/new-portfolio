@@ -1,8 +1,9 @@
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/Navbar/Navbar";
+import { ReactNode } from "react";
 
-const App = ({ children }) => {
+const App = ({ children }: { children: ReactNode }) => {
   return (
-    <div>
+    <div className="app">
       <Navbar />
       {children}
     </div>
