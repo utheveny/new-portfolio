@@ -7,15 +7,16 @@ import {
 import './index.scss'
 import Home from './Pages/Home';
 import Projects from './Pages/Projects';
+import App from './App';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <App><Home /></App>,
   },
   {
     path: "/projects",
-    element: <Projects />
+    element: <App><Projects /></App>
   }
 ]);
 
