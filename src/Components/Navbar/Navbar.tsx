@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import logo from "../../assets/logo.png";
 import hamburger from "../../assets/ep_menu.svg";
+import { FaHome } from 'react-icons/fa';
 
 const NavbarContainer = styled.nav`
   /* Desktop version */
@@ -159,7 +160,7 @@ const Navbar = () => {
 
         <div className="links">
           {/* Desktop Link 1 */}
-          <NavbarDesktopLink href="/">⌂</NavbarDesktopLink>
+          <NavbarDesktopLink href="/"><FaHome /></NavbarDesktopLink>
           {/* Desktop Link 2 */}
           <NavbarDesktopLink href="/projects">Experiences</NavbarDesktopLink>
           {/* Desktop Link 3 */}
