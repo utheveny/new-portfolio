@@ -1,18 +1,31 @@
 import { useState } from "react";
 import styled from "styled-components";
 import logo from "../../assets/logo.png";
-import hamburger from "../../assets/ep_menu.svg";
-import { FaHome } from 'react-icons/fa';
+
+import { FaHome } from "react-icons/fa";
+import { IoBarChart } from "react-icons/io5";
+import { RiMenuFoldLine } from "react-icons/ri";
+import { IoIosClose } from "react-icons/io";
+import { FaPaintBrush } from "react-icons/fa";
+import { FaEnvelopeOpenText } from "react-icons/fa";
+import { FaFileDownload } from "react-icons/fa";
+import { MdBusinessCenter } from "react-icons/md";
 
 const NavbarContainer = styled.nav`
-  /* Desktop version */
+  /*******************/
+  /*     General     */
+  /*******************/
+
   background-color: black;
   padding: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  /******************/
   /* Mobile version */
+  /******************/
+
   @media (max-width: 768px) {
     align-items: flex-start;
 
@@ -41,30 +54,77 @@ const NavbarContainer = styled.nav`
     .mobile-menu {
       display: flex;
       flex-direction: column;
+
       position: fixed;
       top: 0;
-      left: 0;
+      right: 0;
+
       width: 100%;
+      max-width: 400px;
       height: 100%;
+
       background-color: black;
       padding: 20px;
       z-index: 1000;
-    }
 
-    .mobile-menu a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px;
-      margin: 0 10px;
-      &:hover {
-        text-decoration: underline;
+      .cards {
+        width: 100%;
+        height: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        // grid-column-gap: 4px;
+        grid-row-gap: 24px;
+
+        baclground-color: red;
+
+        .card {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          border: 1px dashed #4ace26;
+          border-radius: 4px;
+        }
+        .link-icon {
+          width: 24px;
+          height: 24px;
+
+          color: #4ace26;
+        }
+        a {
+          color: #fff;
+          text-decoration: none;
+          padding: 10px;
+          margin: 0 10px;
+        }
       }
     }
 
-    .close-icon {
+    .close-button {
+      width: 32px;
+      height: 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
       align-self: flex-end;
+
       cursor: pointer;
-      color: #fff;
+      background-color: #4ace26;
+      border-radius: 100%;
+
+      margin-bottom: 8px;
+      margin-right: 8px;
+
+      .close-icon {
+        width: 24px;
+        height: 24px;
+
+        color: #fff;
+      }
     }
 
     .desktop-button {
@@ -72,7 +132,10 @@ const NavbarContainer = styled.nav`
     }
   }
 
+  /*******************/
   /* Desktop version */
+  /*******************/
+
   @media (min-width: 769px) {
     .logo {
       width: 40px;
@@ -160,7 +223,9 @@ const Navbar = () => {
 
         <div className="links">
           {/* Desktop Link 1 */}
-          <NavbarDesktopLink href="/"><FaHome /></NavbarDesktopLink>
+          <NavbarDesktopLink href="/">
+            <FaHome />
+          </NavbarDesktopLink>
           {/* Desktop Link 2 */}
           <NavbarDesktopLink href="/projects">Experiences</NavbarDesktopLink>
           {/* Desktop Link 3 */}
@@ -175,28 +240,54 @@ const Navbar = () => {
         <button className="desktop-button">Download CV</button>
 
         {/* Hamburger Button */}
-        <div className="menu-icon mobile-button" onClick={toggleMenu}>
-          <img src={hamburger} className="icon" />
-        </div>
+        <RiMenuFoldLine
+          className="menu-icon mobile-button"
+          onClick={toggleMenu}
+        />
 
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="mobile-menu">
             {/* Close button */}
-            <span className="close-icon" onClick={() => setIsMenuOpen(false)}>
-              ✖
-            </span>
+            <div className="close-button">
+              <IoIosClose
+                className="close-icon"
+                onClick={() => setIsMenuOpen(false)}
+              />
+            </div>
 
-            {/* Mobile Link 1 */}
-            <NavbarMobileLink href="/">Accueil</NavbarMobileLink>
-            {/* Mobile Link 2 */}
-            <NavbarMobileLink href="/projects">Experiences</NavbarMobileLink>
-            {/* Mobile Link 3 */}
-            <NavbarMobileLink href="/projects">Competences</NavbarMobileLink>
-            {/* Mobile Link 4 */}
-            <NavbarMobileLink href="/projects">Projets</NavbarMobileLink>
-            {/* Mobile Link 5 */}
-            <NavbarMobileLink href="/projects">Contact</NavbarMobileLink>
+            <div className="cards">
+              {/* Mobile Link 1 */}
+              <NavbarMobileLink href="/" className="card">
+                <FaHome className="link-icon" />
+                <span>Accueil</span>
+              </NavbarMobileLink>
+              {/* Mobile Link 2 */}
+              <NavbarMobileLink href="/projects" className="card">
+                <MdBusinessCenter className="link-icon" />
+                <span>Experiences</span>
+              </NavbarMobileLink>
+              {/* Mobile Link 3 */}
+              <NavbarMobileLink href="/projects" className="card">
+                <IoBarChart className="link-icon" />
+                <span>Competences</span>
+              </NavbarMobileLink>
+              {/* Mobile Link 4 */}
+              <NavbarMobileLink href="/projects" className="card">
+                <FaPaintBrush className="link-icon" />
+                <span>Projets</span>
+              </NavbarMobileLink>
+              {/* Mobile Link 5 */}
+              <NavbarMobileLink href="/projects" className="card">
+                <FaEnvelopeOpenText className="link-icon" />
+                <span>Contact</span>
+              </NavbarMobileLink>
+              {/* Mobile Link 6 */}
+              <NavbarMobileLink href="/projects" className="card">
+                <FaFileDownload className="link-icon" />
+                <span>Download CV</span>
+              </NavbarMobileLink>
+            </div>
           </div>
         )}
       </NavbarContainer>
