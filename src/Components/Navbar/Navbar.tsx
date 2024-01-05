@@ -8,8 +8,7 @@ import logo from "../../assets/logo.png";
 // Icons
 import { FaHome } from "react-icons/fa";
 import { IoBarChart } from "react-icons/io5";
-import { RiMenuFoldLine } from "react-icons/ri";
-import { IoIosClose } from "react-icons/io";
+import { RiMenuFoldLine, RiMenuUnfoldFill } from "react-icons/ri";
 import { FaPaintBrush } from "react-icons/fa";
 import { FaEnvelopeOpenText } from "react-icons/fa";
 import { FaFileDownload } from "react-icons/fa";
@@ -25,6 +24,11 @@ const NavbarContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .rotate {
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(180deg);
+  }
 
   /******************/
   /* Mobile version */
@@ -125,22 +129,21 @@ const NavbarContainer = styled.nav`
       height: 32px;
 
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       align-self: flex-end;
 
-      cursor: pointer;
       background-color: #4ace26;
       border-radius: 100%;
+      cursor: pointer;
 
+      margin-top: 4px;
       margin-bottom: 8px;
-      margin-right: 8px;
+      margin-right: 4px;
 
       .close-icon {
-        width: 24px;
-        height: 24px;
-
         color: #fff;
+        fill: #fff;
       }
     }
 
@@ -266,7 +269,7 @@ const Navbar = () => {
         </button>
 
         {/* Hamburger Button */}
-        <div className="menu-button" onClick={() => setIsMenuOpen(true)}>
+        <div className={`menu-button ${isMenuOpen ? 'rotate' : ''}`} onClick={() => setIsMenuOpen(true)}>
           <RiMenuFoldLine className="menu-icon" />
         </div>
 
@@ -276,10 +279,10 @@ const Navbar = () => {
             <div className="mobile-menu">
               {/* Close button */}
               <div
-                className="close-button"
+                className={`close-button ${isMenuOpen ? 'rotate' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                <IoIosClose className="close-icon" />
+                <RiMenuUnfoldFill className="close-icon" />
               </div>
 
               <div className="cards">
