@@ -56,6 +56,16 @@ const NavbarContainer = styled.nav`
       }
     }
 
+    .mobile-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
     .mobile-menu {
       display: flex;
       flex-direction: column;
@@ -71,6 +81,8 @@ const NavbarContainer = styled.nav`
       background-color: black;
       padding: 20px;
       z-index: 1000;
+
+      backdrop-filter: blur(500px);
 
       .cards {
         width: 100%;
@@ -260,43 +272,48 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="mobile-menu">
-            {/* Close button */}
-            <div className="close-button" onClick={() => setIsMenuOpen(false)}>
-              <IoIosClose className="close-icon" />
-            </div>
+          <div className="mobile-overlay" onClick={() => setIsMenuOpen(false)}>
+            <div className="mobile-menu">
+              {/* Close button */}
+              <div
+                className="close-button"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <IoIosClose className="close-icon" />
+              </div>
 
-            <div className="cards">
-              {/* Mobile Link 1 */}
-              <NavbarMobileLink href="/" className="card">
-                <FaHome className="link-icon" />
-                <span>Accueil</span>
-              </NavbarMobileLink>
-              {/* Mobile Link 2 */}
-              <NavbarMobileLink href="/projects" className="card">
-                <MdBusinessCenter className="link-icon" />
-                <span>Experiences</span>
-              </NavbarMobileLink>
-              {/* Mobile Link 3 */}
-              <NavbarMobileLink href="/projects" className="card">
-                <IoBarChart className="link-icon" />
-                <span>Competences</span>
-              </NavbarMobileLink>
-              {/* Mobile Link 4 */}
-              <NavbarMobileLink href="/projects" className="card">
-                <FaPaintBrush className="link-icon" />
-                <span>Projets</span>
-              </NavbarMobileLink>
-              {/* Mobile Link 5 */}
-              <NavbarMobileLink href="/projects" className="card">
-                <FaEnvelopeOpenText className="link-icon" />
-                <span>Contact</span>
-              </NavbarMobileLink>
-              {/* Mobile Link 6 */}
-              <NavbarMobileLink href="/projects" className="card">
-                <FaFileDownload className="link-icon" />
-                <span>Download CV</span>
-              </NavbarMobileLink>
+              <div className="cards">
+                {/* Mobile Link 1 */}
+                <NavbarMobileLink href="/" className="card">
+                  <FaHome className="link-icon" />
+                  <span>Accueil</span>
+                </NavbarMobileLink>
+                {/* Mobile Link 2 */}
+                <NavbarMobileLink href="/projects" className="card">
+                  <MdBusinessCenter className="link-icon" />
+                  <span>Experiences</span>
+                </NavbarMobileLink>
+                {/* Mobile Link 3 */}
+                <NavbarMobileLink href="/projects" className="card">
+                  <IoBarChart className="link-icon" />
+                  <span>Competences</span>
+                </NavbarMobileLink>
+                {/* Mobile Link 4 */}
+                <NavbarMobileLink href="/projects" className="card">
+                  <FaPaintBrush className="link-icon" />
+                  <span>Projets</span>
+                </NavbarMobileLink>
+                {/* Mobile Link 5 */}
+                <NavbarMobileLink href="/projects" className="card">
+                  <FaEnvelopeOpenText className="link-icon" />
+                  <span>Contact</span>
+                </NavbarMobileLink>
+                {/* Mobile Link 6 */}
+                <NavbarMobileLink href="/projects" className="card">
+                  <FaFileDownload className="link-icon" />
+                  <span>Download CV</span>
+                </NavbarMobileLink>
+              </div>
             </div>
           </div>
         )}
