@@ -1,7 +1,11 @@
+// Imports
 import { useState } from "react";
 import styled from "styled-components";
+
+// Assets
 import logo from "../../assets/logo.png";
 
+// Icons
 import { FaHome } from "react-icons/fa";
 import { IoBarChart } from "react-icons/io5";
 import { RiMenuFoldLine } from "react-icons/ri";
@@ -34,7 +38,7 @@ const NavbarContainer = styled.nav`
       height: 32px;
     }
 
-    .menu-icon {
+    .menu-button {
       width: 32px;
       height: 32px;
 
@@ -44,8 +48,9 @@ const NavbarContainer = styled.nav`
 
       background-color: #4ace26;
       border-radius: 100%;
+      cursor: pointer;
 
-      .icon {
+      .menu-icon {
         color: #fff;
         fill: #fff;
       }
@@ -127,7 +132,7 @@ const NavbarContainer = styled.nav`
       }
     }
 
-    .desktop-button {
+    .download-button {
       display: none;
     }
   }
@@ -151,11 +156,14 @@ const NavbarContainer = styled.nav`
       font-weight: 400;
     }
 
-    .desktop-button {
+    .download-button {
       height: 40px;
       border: none;
       border-radius: 4px;
       padding: 0 16px;
+
+      display: flex;
+      align-items: center;
 
       font-size: 16px;
       font-weight: 600;
@@ -167,6 +175,13 @@ const NavbarContainer = styled.nav`
 
       &:hover {
         background-color: #4ac026;
+      }
+
+      .download-icon {
+        width: 18px;
+        height: 18px;
+
+        margin-right: 8px;
       }
     }
 
@@ -211,10 +226,6 @@ const NavbarMobileLink = styled.a`
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
     <header>
       <NavbarContainer>
@@ -237,23 +248,22 @@ const Navbar = () => {
         </div>
 
         {/* Download CV Button */}
-        <button className="desktop-button">Download CV</button>
+        <button className="download-button">
+          <FaFileDownload className="download-icon" />
+          <span>CV</span>
+        </button>
 
         {/* Hamburger Button */}
-        <RiMenuFoldLine
-          className="menu-icon mobile-button"
-          onClick={toggleMenu}
-        />
+        <div className="menu-button" onClick={() => setIsMenuOpen(true)}>
+          <RiMenuFoldLine className="menu-icon" />
+        </div>
 
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="mobile-menu">
             {/* Close button */}
-            <div className="close-button">
-              <IoIosClose
-                className="close-icon"
-                onClick={() => setIsMenuOpen(false)}
-              />
+            <div className="close-button" onClick={() => setIsMenuOpen(false)}>
+              <IoIosClose className="close-icon" />
             </div>
 
             <div className="cards">
