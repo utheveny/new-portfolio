@@ -1,0 +1,201 @@
+// Variables
+$primary-color: #4ace26;
+$background-color: black;
+
+// General Styles
+header {
+  background-color: $background-color;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .rotate {
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(180deg);
+  }
+
+  // Mobile Version
+  @media (max-width: 768px) {
+    align-items: flex-start;
+
+    .logo {
+      width: 32px;
+      height: 32px;
+    }
+
+    .menu-button {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $primary-color;
+      border-radius: 100%;
+      cursor: pointer;
+
+      .menu-icon {
+        color: #fff;
+        fill: #fff;
+      }
+    }
+
+    .mobile-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .mobile-menu {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 400px;
+      height: 100%;
+      background-color: $background-color;
+      padding: 20px;
+      z-index: 1000;
+      backdrop-filter: blur(500px);
+
+      .cards {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-row-gap: 24px;
+
+        .card {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border: 1px dashed $primary-color;
+          border-radius: 4px;
+
+          .link-icon {
+            width: 24px;
+            height: 24px;
+            color: $primary-color;
+          }
+
+          a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+
+    .close-button {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: flex-end;
+      background-color: $primary-color;
+      border-radius: 100%;
+      cursor: pointer;
+      margin-top: 4px;
+      margin-bottom: 8px;
+      margin-right: 4px;
+
+      .close-icon {
+        color: #fff;
+        fill: #fff;
+      }
+    }
+
+    .download-button {
+      display: none;
+    }
+  }
+
+  // Desktop Version
+  @media (min-width: 769px) {
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .download-button {
+      height: 40px;
+      border: none;
+      border-radius: 4px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: $primary-color;
+      color: white;
+      cursor: pointer;
+      transition: 0.25s ease-in;
+
+      &:hover {
+        background-color: #4ac026;
+      }
+
+      .download-icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+      }
+    }
+
+    .mobile-button {
+      display: none;
+    }
+  }
+}
+
+// Desktop Link
+.desktop-link {
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  color: #cbd5e0;
+  text-decoration: none;
+  padding: 10px;
+  margin: 0 10px;
+  transition: 0.25s ease-in;
+
+  &:hover {
+    color: white;
+  }
+}
+
+// Mobile Link
+.mobile-link {
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  margin: 0 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
