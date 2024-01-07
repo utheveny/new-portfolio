@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route/*, Navigate*/ } from "react-router-dom";
 import "./index.scss";
 import Home from "./Pages/Home/Home";
 import Projects from "./Pages/Projects/Projects";
@@ -17,8 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <Router>
       {maintenanceMode ? (
         <Routes>
-          <Route path="/" element={<Navigate to="/maintenance" />} />
-          <Route path="/maintenance" element={<Waiting />} />
+          <Route path="/" element={<Waiting />} />
         </Routes>
       ) : (
         <App>
