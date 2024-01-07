@@ -43,11 +43,11 @@ const Navbar = () => {
           <FaHome />
         </a>
         {/* Desktop Link 2 */}
-        <a className="desktop-link" href="/projects">
+        <a className="desktop-link" href="/resume">
           Experiences
         </a>
         {/* Desktop Link 3 */}
-        <a className="desktop-link" href="/projects">
+        <a className="desktop-link" href="/skills">
           Competences
         </a>
         {/* Desktop Link 4 */}
@@ -55,7 +55,7 @@ const Navbar = () => {
           Projets
         </a>
         {/* Desktop Link 5 */}
-        <a className="desktop-link" href="/projects">
+        <a className="desktop-link" href="/contact">
           Contact
         </a>
       </div>
@@ -93,12 +93,12 @@ const Navbar = () => {
                 <span>Accueil</span>
               </a>
               {/* Mobile Link 2 */}
-              <a href="/projects" className="card">
+              <a href="/resume" className="card">
                 <MdBusinessCenter className="link-icon" />
                 <span>Experiences</span>
               </a>
               {/* Mobile Link 3 */}
-              <a href="/projects" className="card">
+              <a href="/skills" className="card">
                 <IoBarChart className="link-icon" />
                 <span>Competences</span>
               </a>
@@ -108,12 +108,12 @@ const Navbar = () => {
                 <span>Projets</span>
               </a>
               {/* Mobile Link 5 */}
-              <a href="/projects" className="card">
+              <a href="/contact" className="card">
                 <FaEnvelopeOpenText className="link-icon" />
                 <span>Contact</span>
               </a>
               {/* Mobile Link 6 */}
-              <a href="/projects" className="card">
+              <a className="card">
                 <FaFileDownload className="link-icon" />
                 <span>Download CV</span>
               </a>
