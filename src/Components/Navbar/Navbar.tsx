@@ -15,6 +15,7 @@ import {
 import { IoBarChart } from "react-icons/io5";
 import { RiMenuFoldFill, RiMenuUnfoldFill } from "react-icons/ri";
 import { MdBusinessCenter } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,31 +34,31 @@ const Navbar = () => {
   return (
     <header>
       {/* Logo */}
-      <a href="/">
+      <NavLink to="/">
         <img src={logo} alt="Logo" className="logo" />
-      </a>
+      </NavLink>
 
       <div className="links">
         {/* Desktop Link 1 */}
-        <a className="desktop-link" href="/">
+        <NavLink className="desktop-link" to="/">
           <FaHome />
-        </a>
+        </NavLink>
         {/* Desktop Link 2 */}
-        <a className="desktop-link" href="/resume">
+        <NavLink className="desktop-link" to="/resume">
           Experiences
-        </a>
+        </NavLink>
         {/* Desktop Link 3 */}
-        <a className="desktop-link" href="/skills">
+        <NavLink className="desktop-link" to="/skills">
           Competences
-        </a>
+        </NavLink>
         {/* Desktop Link 4 */}
-        <a className="desktop-link" href="/projects">
+        <NavLink className="desktop-link" to="/projects">
           Projets
-        </a>
+        </NavLink>
         {/* Desktop Link 5 */}
-        <a className="desktop-link" href="/contact">
+        <NavLink className="desktop-link" to="/contact">
           Contact
-        </a>
+        </NavLink>
       </div>
 
       {/* Download CV Button */}
@@ -88,30 +89,30 @@ const Navbar = () => {
 
             <div className="cards">
               {/* Mobile Link 1 */}
-              <a href="/" className="card">
+              <NavLink to="/" className="card">
                 <FaHome className="link-icon" />
                 <span>Accueil</span>
-              </a>
+              </NavLink>
               {/* Mobile Link 2 */}
-              <a href="/resume" className="card">
+              <NavLink to="/resume" className="card">
                 <MdBusinessCenter className="link-icon" />
                 <span>Experiences</span>
-              </a>
+              </NavLink>
               {/* Mobile Link 3 */}
-              <a href="/skills" className="card">
+              <NavLink to="/skills" className="card">
                 <IoBarChart className="link-icon" />
                 <span>Competences</span>
-              </a>
+              </NavLink>
               {/* Mobile Link 4 */}
-              <a href="/projects" className="card">
+              <NavLink to="/projects" className="card">
                 <FaPaintBrush className="link-icon" />
                 <span>Projets</span>
-              </a>
+              </NavLink>
               {/* Mobile Link 5 */}
-              <a href="/contact" className="card">
+              <NavLink to="/contact" className="card">
                 <FaEnvelopeOpenText className="link-icon" />
                 <span>Contact</span>
-              </a>
+              </NavLink>
               {/* Mobile Link 6 */}
               <a className="card">
                 <FaFileDownload className="link-icon" />
