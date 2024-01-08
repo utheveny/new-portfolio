@@ -1,7 +1,9 @@
+import './Resume.scss';
+
 function Resume() {
 
   return (
-    <div>
+    <div className="container">
       Experiences
     </div>
     );

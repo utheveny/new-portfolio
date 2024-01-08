@@ -69,7 +69,7 @@ const Navbar = () => {
 
       {/* Hamburger Button */}
       <div
-        className={`menu-button ${menuAnimation ? "" : "rotate"}`}
+        className={`menu-button ${isMenuOpen && menuAnimation ? "" : "rotate"}`}
         onClick={() => setIsMenuOpen(true)}
       >
         <RiMenuUnfoldFill className="menu-icon" />

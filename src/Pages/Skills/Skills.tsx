@@ -1,7 +1,9 @@
+import './Skills.scss';
+
 function Skills() {
 
   return (
-    <div>
+    <div className="container">
       Competences
     </div>
     );

@@ -1,7 +1,9 @@
+import './Contact.scss';
+
 function Contact() {
 
   return (
-    <div>
+    <div className="container">
       Contact
     </div>
     );

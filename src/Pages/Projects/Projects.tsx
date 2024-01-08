@@ -1,7 +1,9 @@
+import './Projects.scss';
+
 function Projects() {
 
   return (
-    <div>
+    <div className="container">
       Projets
     </div>
     );
