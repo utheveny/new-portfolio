@@ -1,5 +1,5 @@
 import "./Waiting.scss"
-import { FaGithub } from "react-icons/fa";
+import { FaGithubSquare } from "react-icons/fa";
 
 function Waiting() {
   return (
@@ -8,7 +8,7 @@ function Waiting() {
       <p className="text">
         Vous pouvez suivre l'avancée du développement sur mon{" "}
         <a className="link" href="https://github.com/ugtheven/new-portfolio">
-          <FaGithub />
+          <FaGithubSquare />
         </a>
       </p>
     </div>
