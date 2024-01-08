@@ -62,10 +62,10 @@ const Navbar = () => {
       </div>
 
       {/* Download CV Button */}
-      <button className="download-button">
+      <a href="UgoTHEVENY_FR_CV.pdf" className="download-button">
         <FaFileDownload className="download-icon" />
         <span>CV</span>
-      </button>
+      </a>
 
       {/* Hamburger Button */}
       <div
@@ -114,7 +114,7 @@ const Navbar = () => {
                 <span>Contact</span>
               </NavLink>
               {/* Mobile Link 6 */}
-              <a className="card">
+              <a href="UgoTHEVENY_FR_CV.pdf" className="card">
                 <FaFileDownload className="link-icon" />
                 <span>Download CV</span>
               </a>
