@@ -1,6 +1,10 @@
+@import '../../_variables.scss';
+
 .container {
   @media (max-width: 768px) {
     height: calc(100vh - 84px);
   }
   height: calc(100vh - 92px);
+
+  color: $primary-color;
 }

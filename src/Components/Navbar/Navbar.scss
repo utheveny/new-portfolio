@@ -1,10 +1,8 @@
-// Variables
-$primary-color: #4ace26;
-$background-color: black;
+@import '../../_variables.scss';
 
 // General Styles
 header {
-  background-color: $background-color;
+  background-color: $secondary-color;
   padding: 24px;
   display: flex;
   justify-content: space-between;
@@ -37,10 +35,14 @@ header {
       background-color: $primary-color;
       border-radius: 100%;
       cursor: pointer;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $primary-variant;
+      }
 
       .menu-icon {
-        color: #fff;
-        fill: #fff;
+        color: $secondary-color;
       }
     }
 
@@ -66,7 +68,7 @@ header {
         top: 0;
         right: -500px;
 
-        background-color: $background-color;
+        background-color: $secondary-color;
         z-index: 1000;
         backdrop-filter: blur(500px);
 
@@ -93,11 +95,16 @@ header {
             border: 1px dashed $primary-color;
             border-radius: 4px;
             cursor: pointer;
+            transition: 0.3s ease-in-out;
 
-            color: #cbd5e0;
+            color: $primary-variant;
             text-decoration: none;
             padding: 10px;
             margin: 0 10px;
+
+            &:hover {
+              color: $primary-color;
+            }
 
             .link-icon {
               width: 24px;
@@ -126,9 +133,14 @@ header {
       margin-top: 4px;
       margin-bottom: 24px;
       margin-right: 4px;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $primary-variant;
+      }
 
       .close-icon {
-        color: #fff;
+        color: $secondary-color;
       }
     }
 
@@ -174,13 +186,9 @@ header {
       font-size: 16px;
       font-weight: 600;
       background-color: $primary-color;
-      color: white;
+      color: $secondary-color;
       cursor: pointer;
       transition: 0.25s ease-in;
-
-      &:hover {
-        background-color: #4ac026;
-      }
 
       .download-icon {
         width: 18px;
